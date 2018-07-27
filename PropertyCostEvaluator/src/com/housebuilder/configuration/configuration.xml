@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean class="com.housebuilder.decorator.PropertyImpl" name="propertyImpl">
+		<constructor-arg index="0" ref="flat2BHK" type="com.housebuilder.housetypes.Property">
+		</constructor-arg>
+		<constructor-arg index="1">
+			<list>
+				<ref bean="window2BHK"/>
+				<ref bean="woodenDoor"/>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean class="com.housebuilder.housetypes.Flat" name="flat2BHK">
+		<property name="description">
+			<value>2BHK</value>
+		</property>
+		<property name="cost">
+			<value>100000</value>
+		</property>
+		<property name="type">
+			<value>FLAT</value>
+		</property>
+		
+	</bean>
+	
+	<bean class="com.housebuilder.amenities.Window" name="window2BHK">
+		<property name="description">
+			<value>Window</value>
+		</property>
+		<property name="cost">
+			<value>250</value>
+		</property>
+		<property name="type">
+			<value>WINDOW</value>
+		</property>
+	
+	</bean>
+	
+	<bean class="com.housebuilder.amenities.Door" name="woodenDoor">
+		<property name="description">
+			<value>Wooden Door</value>
+		</property>
+		<property name="cost">
+			<value>300</value>
+		</property>
+		<property name="type">
+			<value>DOOR</value>
+		</property>
+	
+	</bean>
+	
+	
+
+</beans>
